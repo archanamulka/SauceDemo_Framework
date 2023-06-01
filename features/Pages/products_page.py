@@ -33,11 +33,12 @@ class ProductsPage(BasePage):
 
     sort_select_classname = "product_sort_container"
 
-
+    # below method verifies if the login is successful and products page is displayed
     def is_product_title_displayed(self):
         return self.is_element_displayed("products_xpath", self.products_xpath)
     
-    
+    # below method takes product_name as argument and adds the product into cart and verifies if successfully added
+
     def add_product_to_cart_and_verify(self, product_name):
 
         if product_name == "Sauce Labs Backpack":
@@ -67,6 +68,8 @@ class ProductsPage(BasePage):
     def click_on_cart_icon(self):
         self.click_on_element("cart_icon_xpath", self.cart_icon_xpath)
     
+    # below method takes sort_type (atoz, ztoa, lotohi, hitolo) as argument and sorts the products accordingly
+
     def sort_products(self, sort_type):
         select = Select(self.find_element_type("sort_select_classname", self.sort_select_classname))
 

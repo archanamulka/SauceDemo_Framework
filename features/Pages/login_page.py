@@ -23,6 +23,7 @@ class loginPage(BasePage):
     login_id = "login-button"
     
      
+    # below method fetches username present on login page
 
     def get_username(self):
         login_credentials = self.driver.find_element(By.XPATH, "//div[@id='login_credentials']").text
@@ -30,6 +31,8 @@ class loginPage(BasePage):
         username = login_cred_list[1]
         return username
     
+    # below method fetches password present on login page
+
     def get_password(self):
         login_password = self.driver.find_element(By.XPATH, "//div[@class='login_password']").text
         login_password_list = login_password.split('\n')

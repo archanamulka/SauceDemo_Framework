@@ -17,6 +17,8 @@ class CheckoutYourInfo(BasePage):
     postal_code_id = "postal-code"
     continue_id = "continue"
 
+    # input methods for entering first name, last name and postal code
+
     def enter_first_name(self, firstname):
         self.enter_input_into_element("first_name_id", self.first_name_id, firstname)
     
@@ -25,6 +27,8 @@ class CheckoutYourInfo(BasePage):
 
     def enter_postal_code(self, postalcode):
         self.enter_input_into_element("postal_code_id", self.postal_code_id, postalcode) 
+    
+    # below method clicks on continue button
     
     def click_continue(self):
         self.click_on_element("continue_id", self.continue_id)

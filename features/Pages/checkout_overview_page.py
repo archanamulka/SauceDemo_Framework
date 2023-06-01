@@ -18,6 +18,7 @@ class CheckoutOverview(BasePage):
     product_prices_xpath = "//div[@class='inventory_item_price']"
     product_quantities_xpath = "//div[@class='cart_quantity']"
 
+    # verifies whether the actual product name matches with the expected product name 
 
     def verify_product_name(self, expected_product_name):
         product_name_list = self.find_elements_type("product_names_xpath", self.product_names_xpath)
@@ -27,6 +28,8 @@ class CheckoutOverview(BasePage):
             else:
                 assert False, "Expected product not found on checkout page"
     
+    # verifies whether the actual product description matches with the expected product description
+
     def verify_product_desc(self, expected_product_desc):
         product_desc_list = self.find_elements_type("product_descs_xpath", self.product_descs_xpath)
         for product_desc_ele in product_desc_list:
@@ -35,6 +38,8 @@ class CheckoutOverview(BasePage):
             else:
                 assert False, "Expected product desc not found on checkout page"
 
+    # verifies whether the actual product price matches with the expected product price
+
     def verify_product_price(self, expected_product_price):
         product_price_list = self.find_elements_type("product_prices_xpath", self.product_prices_xpath)
         for product_price_ele in product_price_list:
@@ -42,6 +47,8 @@ class CheckoutOverview(BasePage):
                 assert True
             else:
                 assert False, "Expected product price not found on checkout page"
+
+    # verifies whether the actual product quantity matches with the expected product quantity
 
     def verify_product_quantity(self, expected_product_quantity):
         product_quantity_list = self.find_elements_type("product_quantities_xpath", self.product_quantities_xpath)

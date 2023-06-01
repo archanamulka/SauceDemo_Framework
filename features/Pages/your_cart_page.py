@@ -22,6 +22,7 @@ class YourCartPage(BasePage):
 
     checkout_id = "checkout"
 
+    # below method takes product_name as argument and verifies if the item is present in the cart
 
     def verify_item_present_in_cart(self, product_name):
 
@@ -43,6 +44,9 @@ class YourCartPage(BasePage):
         elif product_name == "Red T-shirt":
             assert self.is_element_displayed("product_remove_test_xpath", self.product_remove_test_xpath)
     
+    
+    # below method clicks on checkout button
+
     def click_checkout(self):
         self.click_on_element("checkout_id", self.checkout_id)
     
